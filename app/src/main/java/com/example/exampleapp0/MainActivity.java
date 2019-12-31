@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,11 +27,11 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Text replaced !", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
             }
         });
-
 
         Fan myFan = new Fan();
         Light myLight = new Light();
@@ -38,11 +39,7 @@ public class MainActivity extends AppCompatActivity {
         Switch mySwitch = new Switch();
 
         mySwitch.wireUp(myFan);
-
-        mySwitch.flipSwitchUp();
-        mySwitch.flipSwitchDown();
-
-        mySwitch.unWire(myFan);
+        mySwitch.wireUp(myLight);
 
         mySwitch.flipSwitchUp();
 
@@ -69,8 +66,6 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
 
 
 }
